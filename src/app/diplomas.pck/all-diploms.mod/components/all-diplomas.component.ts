@@ -10,7 +10,7 @@ import { CourseDataInterface } from '../../../core.mod/interfaces/course-data-In
 import { routes } from '../../../routes-model';
 
 @Component({
-  selector: 'te-app-all-courses-widget',
+  selector: 'te-app-all-diplomas',
   templateUrl: './all-diplomas.component.html',
   styleUrls: ['./all-diplomas.component.scss']
 })
