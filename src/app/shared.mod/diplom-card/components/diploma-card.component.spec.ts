@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DiplomaCardComponent } from './diploma-card.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ReadMoreComponent } from '../../../utility.mod/read-more/components/read-more.component';
 
 describe('DiplomCardComponent', () => {
   let component: DiplomaCardComponent;
@@ -8,7 +10,8 @@ describe('DiplomCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DiplomaCardComponent ]
+      imports: [RouterTestingModule],
+      declarations: [ DiplomaCardComponent, ReadMoreComponent ]
     })
     .compileComponents();
   }));
@@ -16,6 +19,7 @@ describe('DiplomCardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DiplomaCardComponent);
     component = fixture.componentInstance;
+    component.diploma = {} as any;
     fixture.detectChanges();
   });
 

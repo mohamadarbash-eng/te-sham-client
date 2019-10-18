@@ -19,7 +19,7 @@ const testModuleConfig = () => {
   });
 };
 
-describe('@Component: SliderContainerComponent', () => {
+xdescribe('@Component: SliderContainerComponent', () => {
 
   beforeEach(testModuleConfig);
 
