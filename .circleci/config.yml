@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  test:
+  npm_install:
     docker:
       # specify the version you desire here
       - image: circleci/node:10.16.3
@@ -32,13 +32,9 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
-      - run: npm run build
-
-  prepare_test:
+  test:
     docker:
       - image: circleci/node:jessie-browsers
-      - image: circleci/node:10.16.3
     steps:
       - checkout
       - run: mkdir test-reports
@@ -49,6 +45,25 @@ jobs:
           name: Start Selenium
           command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
           background: true
+
+      # run tests!
+      - run: npm run test
+
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:10.16.3
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
       - run: npm install
 
       - save_cache:
@@ -57,15 +72,18 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: npm run test
+      - run: npm run build
 
 
 workflows:
   version: 2
   build_and_test: # name of your workflow
     jobs:
-      - prepare_test
+      - npm_install
       - test:
           requires:
             - prepare_test # wait for build1 job to complete successfully before starting
           # see circleci.com/docs/2.0/workflows/ for more examples.
+      - build:
+          requires:
+            - test
