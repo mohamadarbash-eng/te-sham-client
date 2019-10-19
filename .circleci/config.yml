@@ -82,7 +82,7 @@ workflows:
       - npm_install
       - test:
           requires:
-            - prepare_test # wait for build1 job to complete successfully before starting
+            - npm_install # wait for build1 job to complete successfully before starting
           # see circleci.com/docs/2.0/workflows/ for more examples.
       - build:
           requires:
