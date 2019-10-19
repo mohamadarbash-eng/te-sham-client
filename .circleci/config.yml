@@ -33,7 +33,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: npm build
+      - run: npm run build
 
   prepare_test:
     docker:
