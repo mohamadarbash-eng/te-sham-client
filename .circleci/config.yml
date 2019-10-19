@@ -7,8 +7,9 @@ jobs:
   test:
     docker:
       # specify the version you desire here
-      - image: circleci/node:10.16.3
-
+      - image: circleci/node:10.16.3-browsers
+      environment:
+        CHROME_BIN: "/usr/bin/google-chrome"
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
@@ -57,6 +58,6 @@ workflows:
     jobs:
       - prepare_test
       - test:
-        requires:
-          - prepare_test # wait for build1 job to complete successfully before starting
+          requires:
+            - prepare_test # wait for build1 job to complete successfully before starting
           # see circleci.com/docs/2.0/workflows/ for more examples.
