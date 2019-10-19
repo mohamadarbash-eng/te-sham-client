@@ -37,8 +37,8 @@ jobs:
 
   prepare_test:
     docker:
-      - image: selenium/standalone-chrome:3.1.0
       - image: circleci/node:jessie-browsers
+      - image: circleci/node:10.16.3
     steps:
       - checkout
       - run: mkdir test-reports
