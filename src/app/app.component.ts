@@ -13,7 +13,7 @@ import { TranslateAppService } from './core.mod/translate/services/translate-app
  */
 export class AppComponent {
   constructor(private translateAppService: TranslateAppService) {
-    console.log('fdffd');
+    console.log('fdffhhkjhkd');
     this.translateAppService.prepareLang();
   }
 }
