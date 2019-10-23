@@ -7,6 +7,7 @@ import { TranslateAppService } from './core.mod/translate/services/translate-app
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+// TODO test
 export class AppComponent {
   constructor(private translateAppService: TranslateAppService) {
     this.translateAppService.prepareLang();
