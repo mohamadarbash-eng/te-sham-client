@@ -1,7 +1,12 @@
 pipeline {
-    agent any
+    agent { docker { image 'node:10.16' } }
 
     stages {
+        stage('install') {
+        steps {
+        sh 'node --version'
+        }
+        }
         stage('Build') {
             steps {
                 echo 'Buildfdfddfdfdfing..'
