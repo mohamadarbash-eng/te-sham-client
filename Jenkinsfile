@@ -2,11 +2,6 @@ pipeline {
     agent none
 
     stages {
-        stage('install') {
-        steps {
-        sh 'node --version'
-        }
-        }
         stage('Build') {
             steps {
                 echo 'Buildfdfddfdfdfing..'
