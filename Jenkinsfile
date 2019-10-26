@@ -1,14 +1,15 @@
 pipeline {
   agent any
    tools {nodejs "NodeJS-12.6.0"}
+       environment {
+           CI = 'true'
+       }
   stages {
     stage('Install Packages') {
       steps {
         sh 'npm install'
       }
     }
-    stage('Test and Build') {
-      parallel {
         stage('Run Tests') {
           steps {
             sh 'npm run test'
@@ -18,8 +19,6 @@ pipeline {
           steps {
             sh 'npm run build'
           }
-        }
-      }
     }
 }
 }
