@@ -1,6 +1,5 @@
 node {
         withEnv(["PATH+MAVEN=${tool name: 'NodeJS 12.6.0', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'}/bin"]) {
-  stages {
     stage('Install Packages') {
       steps {
         sh 'npm install'
@@ -19,7 +18,6 @@ node {
           }
         }
       }
-    }
 }
 }
 }
