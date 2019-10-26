@@ -1,9 +1,6 @@
 pipeline {
-  agent none
-  environment {
-      GOPATH  =  '/ home / jenkins / npm'
-
-  }
+  agent any
+   tools {nodejs "nodejs"}
   stages {
     stage('Install Packages') {
       steps {
