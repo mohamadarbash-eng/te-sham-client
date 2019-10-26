@@ -28,14 +28,14 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['ChromeJenkins'],
+    browsers: [ci.isCI ? 'ChromeJenkins' : 'Chrome'],
     customLaunchers: {
       ChromeJenkins: {
         base: 'ChromeHeadless',
         flags: ['--no-sandbox', '--disable-gpu'],
       },
     },
-    singleRun: true
+    singleRun: ci.isCI
   });
 };
 
