@@ -3,8 +3,7 @@ node {
     stage('Install Packages') {
         sh 'npm install'
     }
-    stage('Test and Build') {
-      parallel {
+
         stage('Run Tests') {
             sh 'npm run test'
         }
@@ -12,6 +11,4 @@ node {
             sh 'npm run build'
         }
       }
-}
-}
 }
