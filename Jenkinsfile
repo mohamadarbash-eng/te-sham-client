@@ -1,9 +1,8 @@
 pipeline {
   agent none
   environment {
-    CI = 'true'
-    HOME = '.'
-    npm_config_cache = 'npm-cache'
+      GOPATH  =  '/ home / jenkins / npm'
+
   }
   stages {
     stage('Install Packages') {
