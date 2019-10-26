@@ -27,7 +27,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: [ci.isCI ? 'ChromeJenkins' : 'Chrome'],
+    browsers: ['ChromeJenkins'],
     customLaunchers: {
       ChromeJenkins: {
         base: 'ChromeHeadless',
