@@ -1,6 +1,6 @@
 pipeline {
   agent any
-   tools {nodejs "nodeJS"}
+   tools {nodejs "NodeJS-12.6.0"}
   stages {
     stage('Install Packages') {
       steps {
