@@ -28,6 +28,12 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: [ci.isCI ? 'ChromeJenkins' : 'Chrome'],
+    customLaunchers: {
+      ChromeJenkins: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox', '--disable-gpu'],
+      },
+    },
     singleRun: ci.isCI
   });
 };
