@@ -5,7 +5,7 @@ node {
     }
 
         stage('Run Tests') {
-         sh "npm run test:ci"
+         sh "npm run test_ci"
         }
         stage('Create Build Artifacts') {
             sh 'npm run build'
