@@ -35,7 +35,7 @@ module.exports = function (config) {
         flags: ['--no-sandbox', '--disable-gpu'],
       },
     },
-    singleRun: ci.isCI
+    singleRun: true
   });
 };
 
