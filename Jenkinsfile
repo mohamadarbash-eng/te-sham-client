@@ -5,7 +5,7 @@ pipeline {
            CI = 'true'
        }
   stages {
-    stage('Install Packages') {
+    stage('Install') {
       steps {
         sh 'npm install'
       }
