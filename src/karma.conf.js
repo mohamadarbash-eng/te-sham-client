@@ -32,7 +32,7 @@ module.exports = function (config) {
     customLaunchers: {
       ChromeJenkins: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox', '--disable-gpu'],
+        flags: ['--no-sandbox', '--disable-gpu', 'http://0.0.0.0:9876/'],
       },
     },
     singleRun: ci.isCI
