@@ -4,8 +4,7 @@
 const ci = require('ci-info');
 
 module.exports = function (config) {
-  console.log('require(\'puppeteer\').executablePath()', require('puppeteer').executablePath())
-  process.env.CHROME_BIN = require('puppeteer').executablePath();
+  process.env.CHROMIUM_BIN = require('puppeteer').executablePath();
   config.set({
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
