@@ -4,6 +4,7 @@
 const ci = require('ci-info');
 
 module.exports = function (config) {
+  console.log('require(\'puppeteer\').executablePath()', require('puppeteer').executablePath())
   process.env.CHROME_BIN = require('puppeteer').executablePath();
   config.set({
     basePath: '',
@@ -32,7 +33,7 @@ module.exports = function (config) {
     customLaunchers: {
       ChromeJenkins: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox', '--disable-gpu', 'http://0.0.0.0:9876/'],
+        flags: ['--no-sandbox', '--disable-gpu'],
       },
     },
     singleRun: ci.isCI
