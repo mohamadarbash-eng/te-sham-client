@@ -34,7 +34,7 @@ module.exports = function (config) {
     customLaunchers: {
       ChromeJenkins: {
         base: 'ChromeHeadless',
-        flags: ['--headless','--no-sandbox', '--disable-gpu'],
+        flags: ['--headless','--no-sandbox', '--disable-gpu', '--remote-debugging-port=9222'],
       },
     },
     singleRun: ci.isCI
