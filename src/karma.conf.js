@@ -4,6 +4,7 @@
 const ci = require('ci-info');
 
 module.exports = function (config) {
+  process.env.PATH= '/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin';
   process.env.CHROMIUM_BIN = '/usr/bin/chromium-browser';
   process.env.CHROME_BIN = '/usr/bin/chromium-browser';
   config.set({
