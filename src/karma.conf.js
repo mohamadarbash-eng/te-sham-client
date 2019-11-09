@@ -4,7 +4,7 @@
 const ci = require('ci-info');
 
 module.exports = function (config) {
-
+  process.env.CHROME_BIN = require('puppeteer').executablePath();
   process.env.CHROMIUM_BIN = '/usr/bin/chromium-browser';
   config.set({
     basePath: '',
@@ -25,15 +25,16 @@ module.exports = function (config) {
       fixWebpackSourcePaths: true
     },
     reporters: ['progress', 'kjhtml'],
-    port: 9876,
+    port: 8080,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: [ci.isCI ? 'ChromeJenkins' : 'Chrome'],
     customLaunchers: {
       ChromeJenkins: {
-        base: 'chromium-browser',
-        flags: ['--headless', '--disable-web-security']
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox','--headless', '--disable-web-security',  '--remote-debugging-port=9222'],
+        debug: true
       },
     },
     singleRun: ci.isCI
