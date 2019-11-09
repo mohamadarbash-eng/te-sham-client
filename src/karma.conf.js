@@ -33,7 +33,7 @@ module.exports = function (config) {
     customLaunchers: {
       ChromeJenkins: {
 
-        base: 'Chrome',
+        base: 'ChromeHeadless',
         flags: [
             '--headless',
           '--proxy-server=\'http:localhost:9876\'', '--no-sandbox'],
