@@ -28,14 +28,14 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: [ci.isCI ? 'ChromeJenkins' : 'Chrome'],
+    browsers: [!ci.isCI ? 'ChromeJenkins' : 'Chrome'],
     hostname:'localhost',
     customLaunchers: {
       ChromeJenkins: {
 
         base: 'ChromeHeadless',
         flags: [
-          '--proxy-server=\'http://0.0.0.0:9876\'',],
+          '--proxy-server=\'http:localhost:9876\'', '--no-sandbox'],
       },
     },
     singleRun: ci.isCI,
