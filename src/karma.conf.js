@@ -32,7 +32,10 @@ module.exports = function (config) {
     hostname:'localhost',
     customLaunchers: {
       ChromeJenkins: {
+
         base: 'ChromeHeadless',
+        flags: [
+          '--proxy-server=\'http://0.0.0.0:9876\'',],
       },
     },
     singleRun: ci.isCI,
