@@ -25,11 +25,15 @@ module.exports = function (config) {
       fixWebpackSourcePaths: true
     },
     reporters: ['progress', 'kjhtml'],
-    port: 8080,
+    port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: [ci.isCI ? 'ChromeJenkins' : 'Chrome'],
+    captureTimeout: 210000,
+    browserDisconnectTolerance: 3,
+    browserDisconnectTimeout: 210000,
+    browserNoActivityTimeout: 210000,
     customLaunchers: {
       ChromeJenkins: {
         base: 'ChromeHeadless',
