@@ -39,7 +39,7 @@ module.exports = function (config) {
         'target': 'http://ec2-3-124-2-234.eu-central-1.compute.amazonaws.com:8080/api',
         'changeOrigin': true
       }
-    }
+    },
     customLaunchers: {
       ChromeJenkins: {
 
