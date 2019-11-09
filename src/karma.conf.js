@@ -35,8 +35,7 @@ module.exports = function (config) {
     browsers: [ci.isCI ? 'ChromeJenkins' : 'Chrome'],
     customLaunchers: {
       ChromeJenkins: {
-        base: 'Chrome',
-        flags: ['--headless','--no-sandbox', '--proxy-server=\'http://127.0.0.1:8080\'', '--disable-gpu', '--remote-debugging-port=9222'],
+        base: 'ChromeHeadless'
       },
     },
     singleRun: ci.isCI
