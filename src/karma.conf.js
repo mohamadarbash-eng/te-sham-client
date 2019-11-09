@@ -33,15 +33,13 @@ module.exports = function (config) {
     browserDisconnectTolerance: 3,
     browserDisconnectTimeout: 210000,
     browserNoActivityTimeout: 210000,
-    hostname:'http://ec2-3-124-2-234.eu-central-1.compute.amazonaws.com:8080',
-    listenAddress:'http://ec2-3-124-2-234.eu-central-1.compute.amazonaws.com:8080',
+    hostname:'ec2-3-124-2-234.eu-central-1.compute.amazonaws',
+    listenAddress:'ec2-3-124-2-234.eu-central-1.compute.amazonaws',
     customLaunchers: {
       ChromeJenkins: {
 
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox','--headless',
-          '--proxy-bypass-list=*',
-          '--proxy-server=\'http://ec2-3-124-2-234.eu-central-1.compute.amazonaws.com\'','--disable-web-security',  '--remote-debugging-port=9222'],
+        flags: ['--no-sandbox','--headless','--disable-web-security',  '--remote-debugging-port=9222'],
         debug: true
       },
     },
