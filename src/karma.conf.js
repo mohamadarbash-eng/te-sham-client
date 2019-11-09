@@ -6,8 +6,7 @@ const ci = require('ci-info');
 module.exports = function (config) {
 
   process.env.CHROME_BIN  = '/usr/bin/chromedriver';
-  console.log(process.env.CHROMIUM_BIN );
-  console.log(process.env.CHROME_BIN );
+  process.env.CHROMIUM_BIN = '/usr/bin/chromium-browser';
   config.set({
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
@@ -34,7 +33,7 @@ module.exports = function (config) {
     browsers: [ci.isCI ? 'ChromeJenkins' : 'Chrome'],
     customLaunchers: {
       ChromeJenkins: {
-        base: 'ChromeHeadless'
+        base: 'ChromiumHeadless'
       },
     },
     singleRun: ci.isCI
