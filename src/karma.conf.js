@@ -5,7 +5,6 @@ const ci = require('ci-info');
 
 module.exports = function (config) {
 
-  process.env.CHROME_BIN  = '/usr/bin/chromedriver';
   process.env.CHROMIUM_BIN = '/usr/bin/chromium-browser';
   config.set({
     basePath: '',
