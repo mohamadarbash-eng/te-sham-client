@@ -28,15 +28,18 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: [ci.isCI ? 'ChromeJenkins' : 'Chrome'],
+    browsers: [!ci.isCI ? 'ChromeJenkins' : 'Chrome'],
     hostname:'localhost',
     customLaunchers: {
       ChromeJenkins: {
 
         base: 'ChromeHeadless',
         flags: [
+          '--disable-gpu',
+          '--no-sandbox',
             '--headless',
-          '--proxy-server=\'http:localhost:9876\'', '--no-sandbox'],
+            '--remote-debugging-port=9222',
+          '--proxy-server=\'http:localhost:9876\''],
       },
     },
     singleRun: ci.isCI,
