@@ -38,12 +38,6 @@ module.exports = function (config) {
       ChromeJenkins: {
 
         base: 'ChromeHeadless',
-        flags: [
-            '--no-sandbox',
-          '--headless',
-          '--proxy-bypass-list=*',
-          '--proxy-server=\'http://0.0.0.0:9876\'','--disable-web-security',  '--remote-debugging-port=9222'],
-        debug: true
       },
     },
     singleRun: ci.isCI,
