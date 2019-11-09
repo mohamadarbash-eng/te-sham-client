@@ -33,7 +33,7 @@ module.exports = function (config) {
     browsers: [ci.isCI ? 'ChromeJenkins' : 'Chrome'],
     customLaunchers: {
       ChromeJenkins: {
-        base: 'ChromiumHeadless',
+        base: 'chromium-browser',
         flags: ['--headless', '--disable-web-security']
       },
     },
