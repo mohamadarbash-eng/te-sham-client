@@ -36,7 +36,7 @@ module.exports = function (config) {
     customLaunchers: {
       ChromeJenkins: {
         base: 'Chrome',
-        flags: ['--headless','--no-sandbox', '--proxy-server=\'http://ec2-3-124-2-234.eu-central-1.compute.amazonaws.com/:8080\'', '--disable-gpu', '--remote-debugging-port=9222'],
+        flags: ['--headless','--no-sandbox', '--proxy-server=\'http://127.0.0.1:8080\'', '--disable-gpu', '--remote-debugging-port=9222'],
       },
     },
     singleRun: ci.isCI
