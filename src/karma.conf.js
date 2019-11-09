@@ -33,8 +33,8 @@ module.exports = function (config) {
     browserDisconnectTolerance: 3,
     browserDisconnectTimeout: 210000,
     browserNoActivityTimeout: 210000,
-    hostname:'http://ec2-3-124-2-234.eu-central-1.compute.amazonaws.com:8081',
-    listenAddress:'http://ec2-3-124-2-234.eu-central-1.compute.amazonaws.com:8081',
+    hostname:'http://ec2-3-124-2-234.eu-central-1.compute.amazonaws.com:8080',
+    listenAddress:'http://ec2-3-124-2-234.eu-central-1.compute.amazonaws.com:8080',
     customLaunchers: {
       ChromeJenkins: {
 
