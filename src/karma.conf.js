@@ -34,6 +34,7 @@ module.exports = function (config) {
     browserDisconnectTimeout: 210000,
     browserNoActivityTimeout: 210000,
     hostname:'http://ec2-3-124-2-234.eu-central-1.compute.amazonaws.com/',
+    listenAddress:'http://ec2-3-124-2-234.eu-central-1.compute.amazonaws.com/',
     proxies: {
       '/api': {
         'target': 'http://ec2-3-124-2-234.eu-central-1.compute.amazonaws.com:8080/api',
