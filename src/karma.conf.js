@@ -35,6 +35,7 @@ module.exports = function (config) {
     browserNoActivityTimeout: 210000,
     customLaunchers: {
       ChromeJenkins: {
+
         base: 'ChromeHeadless',
         flags: ['--no-sandbox','--headless',
           '--proxy-bypass-list=*',
