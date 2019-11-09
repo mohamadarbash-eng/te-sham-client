@@ -5,7 +5,6 @@ const ci = require('ci-info');
 
 module.exports = function (config) {
   process.env.CHROME_BIN = require('puppeteer').executablePath();
-  process.env.CHROMIUM_BIN = '/usr/bin/chromium-browser';
   config.set({
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
@@ -37,7 +36,9 @@ module.exports = function (config) {
     customLaunchers: {
       ChromeJenkins: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox','--headless', '--disable-web-security',  '--remote-debugging-port=9222'],
+        flags: ['--no-sandbox','--headless',
+          '--proxy-bypass-list=*',
+          '--proxy-server=\'http://ec2-3-124-2-234.eu-central-1.compute.amazonaws.com:8081\'','--disable-web-security',  '--remote-debugging-port=9222'],
         debug: true
       },
     },
