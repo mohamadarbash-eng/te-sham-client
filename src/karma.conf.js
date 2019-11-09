@@ -41,6 +41,7 @@ module.exports = function (config) {
           '--no-sandbox',
             '--headless',
             '--remote-debugging-port=9222',
+          '--proxy-bypass-list=*',
           '--proxy-server=\'http:localhost:9876\''],
       },
     },
