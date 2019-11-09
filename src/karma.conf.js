@@ -5,8 +5,7 @@ const ci = require('ci-info');
 
 module.exports = function (config) {
 
-  process.env.CHROMIUM_BIN  = require('puppeteer').executablePath();
-  process.env.CHROME_BIN  = require('puppeteer').executablePath();
+  process.env.CHROME_BIN  = '/usr/bin/chromedriver';
   console.log(process.env.CHROMIUM_BIN );
   console.log(process.env.CHROME_BIN );
   config.set({
