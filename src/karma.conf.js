@@ -28,7 +28,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: [!ci.isCI ? 'ChromeJenkins' : 'Chrome'],
+    browsers: [ci.isCI ? 'ChromeJenkins' : 'Chrome'],
     captureTimeout: 210000,
     browserDisconnectTolerance: 3,
     browserDisconnectTimeout: 210000,
@@ -38,13 +38,16 @@ module.exports = function (config) {
       ChromeJenkins: {
 
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox','--headless',
+        flags: [
+            '--no-sandbox',
+          '--headless',
           '--proxy-bypass-list=*',
           '--proxy-server=\'http://0.0.0.0:9876\'','--disable-web-security',  '--remote-debugging-port=9222'],
         debug: true
       },
     },
-    singleRun: ci.isCI
+    singleRun: ci.isCI,
+    concurrency: Infinity
   });
 };
 
