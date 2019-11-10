@@ -28,12 +28,12 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: [ci.isCI ? 'ChromeJenkins' : 'chrome'],
+    browsers: [ci.isCI ? 'ChromeJenkins' : 'Chrome'],
     hostname:'localhost',
     customLaunchers: {
       ChromeJenkins: {
 
-        base: 'chrome',
+        base: 'Chrome',
         flags: [
           '--disable-gpu',
           '--no-sandbox',
