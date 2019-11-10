@@ -3,6 +3,7 @@
 
 const ci = require('ci-info');
 process.env.CHROME_BIN = require('puppeteer').executablePath();
+console.log(process.env.CHROME_BIN);
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -27,7 +28,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: [ci.isCI ? 'ChromeJenkins' : 'Chrome'],
+    browsers: [!ci.isCI ? 'ChromeJenkins' : 'Chrome'],
     hostname: 'localhost',
     listenAddress: 'localhost',
     customLaunchers: {
