@@ -28,7 +28,8 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: [ci.isCI ? 'ChromeJenkins' : 'Chrome'],
-    hostname:'localhost',
+    hostname: 'localhost',
+    listenAddress: 'localhost',
     customLaunchers: {
       ChromeJenkins: {
 
