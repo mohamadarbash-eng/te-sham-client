@@ -36,10 +36,7 @@ module.exports = function (config) {
 
         base: 'Chrome',
         flags: [
-          '--disable-gpu',
-          '--no-sandbox',
-            '--headless',
-            '--remote-debugging-port=9222'],
+            '--headless',],
       },
     },
     singleRun: ci.isCI,
