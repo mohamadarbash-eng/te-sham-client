@@ -34,7 +34,7 @@ module.exports = function (config) {
     listenAddress: 'localhost',
     customLaunchers: {
       ChromeJenkins: {
-        base: 'ChromiumHeadless',
+        base: 'ChromeHeadless',
       },
     },
     singleRun: ci.isCI,
