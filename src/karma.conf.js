@@ -3,7 +3,6 @@
 
 const ci = require('ci-info');
 process.env.CHROME_BIN = require('puppeteer').executablePath();
-process.env.CHROME_PATH = '/usr/bin/google-chrome';
 console.log(process.env.CHROME_BIN);
 module.exports = function (config) {
   config.set({
@@ -35,8 +34,7 @@ module.exports = function (config) {
     customLaunchers: {
       ChromeJenkins: {
         base: 'Chrome',
-        flags: [
-            '--headless',],
+        flags: ['--headless'],
       },
     },
     singleRun: ci.isCI,
