@@ -2,7 +2,7 @@ pipeline {
   agent any
    tools {nodejs "NodeJS-12.6.0"}
        environment {
-           CI = 'true',
+           CI = 'true'
           CHROME_BIN = '/var/lib/jenkins/workspace/tesham_app@2/node_modules/puppeteer/.local-chromium/linux-706915/chrome-linux/chrome'
        }
   stages {
