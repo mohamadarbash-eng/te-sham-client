@@ -2,7 +2,7 @@
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
 const ci = require('ci-info');
-process.env.CHROME_BIN = require('puppeteer').executablePath();
+process.env.CHROME_BIN = '/usr/bin/google-chrome';
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -27,7 +27,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: [ci.isCI ? 'ChromeJenkins' : 'Chrome'],
+    browsers: [!ci.isCI ? 'ChromeJenkins' : 'Chrome'],
     hostname: 'localhost',
     listenAddress: 'localhost',
     customLaunchers: {
