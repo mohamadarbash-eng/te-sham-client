@@ -77,9 +77,8 @@ jobs:
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.1
 
-
 workflows:
-  version: 2
+  version: 2.1
   build_and_test: # name of your workflow
     jobs:
       - npm_install
